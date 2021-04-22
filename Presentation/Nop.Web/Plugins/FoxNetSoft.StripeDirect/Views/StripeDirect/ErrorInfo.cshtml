@@ -1,0 +1,32 @@
+﻿@model FoxNetSoft.Plugin.Payments.StripeDirect.Models.ConnectedAccountModel
+@{
+    Layout = "_ColumnsOne";
+
+    //page class
+    Html.AppendPageCssClassParts("html-topic-page");
+}
+@using Nop.Web.Framework.UI
+<div class="page topic-page">
+    <div class="page-title">
+        <h1>@T("FoxNetSoft.Plugin.Payments.StripeDirect.ConnectedAccount")</h1>
+    </div>
+    <div class="page-body">
+        @if (Model.Warnings.Any())
+        {
+            <div class="message-error">
+                <ul>
+                    @foreach (var warning in Model.Warnings)
+                    {
+                        <li>@warning</li>
+                    }
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div class="message-seccess">
+                @T("FoxNetSoft.Plugin.Payments.StripeDirect.ConnectedAccount.Success")
+            </div>
+        }
+    </div>
+</div>
